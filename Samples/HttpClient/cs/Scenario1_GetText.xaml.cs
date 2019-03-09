@@ -131,9 +131,9 @@ namespace SDKTemplate
                 // ---------------------------------------------------------------------------
                 filter.IgnorableServerCertificateErrors.Add(ChainValidationResult.Untrusted);
                 filter.IgnorableServerCertificateErrors.Add(ChainValidationResult.InvalidName);
-
-                HttpResponseMessage response = await httpClient.GetAsync(resourceUri).AsTask(cts.Token);
+                
                 isFilterUsed = true;
+                HttpResponseMessage response = await httpClient.GetAsync(resourceUri).AsTask(cts.Token);              
 
                 await Helpers.DisplayTextResultAsync(response, OutputField, cts.Token);
 
